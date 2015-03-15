@@ -1,0 +1,7 @@
+/*.classpath
+/*.project
+**/.settings
+**/myspringproject-rest/target
+/myspringproject-rest/*.classpath
+/myspringproject-rest/*.project
+
