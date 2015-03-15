@@ -4,4 +4,6 @@
 **/myspringproject-rest/target
 /myspringproject-rest/*.classpath
 /myspringproject-rest/*.project
-
+/myspringproject-data/*.classpath
+/myspringproject-data/*.project
+**/myspringproject-data/target
