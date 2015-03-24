@@ -1,3 +1,5 @@
+
+<!-- Setting up JPA repositories using the namespace -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
@@ -6,8 +8,19 @@
 	http://www.springframework.org/schema/data/jpa
 	http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 	
+	<!-- Using this element looks up Spring Data repositories as described in Section 1.3.3,
+	 “Creating repository instances”. Beyond that it activates persistence exception translation for all 
+	 beans annotated with @Repository to let exceptions being thrown by the JPA presistence providers be 
+	 converted into Spring's DataAccessException hierarchy. -->
 	<jpa:repositories base-package="com.javanoob.myspringproject.data"/>
 	
+	<!-- Simple implementation of the standard JDBC DataSource interface, configuring the plain old JDBC DriverManager
+	 via bean properties, and returning a new Connection from every getConnection call.
+
+	NOTE: This class is not an actual connection pool; it does not actually pool Connections. 
+	It just serves as simple replacement for a full-blown connection pool, implementing the same standard interface, 
+	but creating new Connections on every call.
+ 	-->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
 		<property name="url" value="jdbc:mysql://localhost/schl_regs"/>
