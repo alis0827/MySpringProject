@@ -19,6 +19,7 @@
 
 	<dependencies>
 		<!-- Spring dependency -->
+		<!-- Exclude commons-logging from spring core dependency so that you can leverage slf4j -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
